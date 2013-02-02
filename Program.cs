@@ -15,6 +15,7 @@ namespace TraktRater
         [STAThread]
         static void Main()
         {
+			bool asdfx= Sites.Listal.ListalTest("e:\\test1.xml");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

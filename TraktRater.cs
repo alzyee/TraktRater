@@ -187,6 +187,7 @@ namespace TraktRater
                 UIUtils.UpdateStatus("Logging in to trakt.tv...");
                 var accountDetails = new TraktAuthentication { Username = AppSettings.TraktUsername, Password = AppSettings.TraktPassword };
                 var response = TraktAPI.TraktAPI.TestAccount(accountDetails);
+				//bool asdfx= Sites.Listal.ListalTest("e:\\test1.xml");
                 if (response == null || response.Status != "success")
                 {
                     UIUtils.UpdateStatus("Unable to login to trakt, check username and password!", true);
