@@ -33,7 +33,7 @@ namespace TraktRater.Sites
 
 				//Create Upload String
 				string UserName = "alzyee";//AppSettings.TraktUsername;
-					string Password = "CC4FF9518D5DD28EAA0DB01392D0D29B3AA1E7DC";//AppSettings.TraktPassword;
+					string Password = "";//AppSettings.TraktPassword;
 				string TransString="";
 
 
