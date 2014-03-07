@@ -27,13 +27,16 @@ namespace TraktRater.Sites
 				string ownedWanted = xn ["listal:listtype"].InnerText;
 
 
-				//#!# This time was wrong by 11 hours for EST so I added 11*3600 seconds. -alzyee
+				//#*# This time was wrong by 11 hours for EST so I added 11*3600 seconds. -aLzyEE
+				//#*# I later found out that trakt lists the time the movie ended so 11 hours is probably wrong -aLzyEE
 				TimeSpan ts = (Convert.ToDateTime(DateAdded) - new DateTime(1970,1,1,0,0,0));
 				double unixTime = ts.TotalSeconds +11*3600;
 
 				//Create Upload String
-				string UserName = "alzyee";//AppSettings.TraktUsername;
-					string Password = "";//AppSettings.TraktPassword;
+				//#*# remove after being implemented execute load app settings because in aLzyEE's version this is done before the form loads. -aLzyEE
+				AppSettings.Load();
+				string UserName = AppSettings.TraktUsername;
+				string Password = AppSettings.TraktPassword;
 				string TransString="";
 
 
@@ -48,7 +51,7 @@ namespace TraktRater.Sites
 					TransString= "{\"password\":\"" + Password + "\",\"username\":\"" + UserName +
 						"\",\"movies\":[{\"imdb_id\":\"tt" + imdbNumber + "\",\"last_played\":"+unixTime+"}]}";
 					Console.WriteLine (TraktWeb.Transmit (TraktURIs.MovieSeen, TransString));
-					//I imagine there are faster + cleaner ways to deal with strings... but they can't be that much faster I am not familiar with them. -alzyee
+					//I imagine there are faster + cleaner ways to deal with strings... but they can't be that much faster and I am not familiar with them. -alzyee
 					if (int.Parse (rating)>0)
 					{
 						TransString= "{\"password\":\"" + Password + "\",\"username\":\"" + UserName +

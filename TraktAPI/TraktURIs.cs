@@ -20,6 +20,7 @@ namespace TraktRater.TraktAPI
         public const string SyncMovieLibrary = @"http://api.trakt.tv/movie/{0}/" + apiKey;
         public const string SyncEpisodeLibrary = @"http://api.trakt.tv/show/episode/{0}/" + apiKey;
 
+		//http://trakt.tv/api-docs/movie-seen
 		public const string MovieSeen=@"http://api.trakt.tv/movie/seen/" + apiKey;
 		public const string MovieWatchlist=@"http://api.trakt.tv/movie/watchlist/"+ apiKey;
 		public const String MovieUnseen=@"http://api.trakt.tv/movie/unseen/" + apiKey;

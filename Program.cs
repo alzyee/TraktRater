@@ -15,7 +15,8 @@ namespace TraktRater
         [STAThread]
         static void Main()
         {
-			bool asdfx= Sites.Listal.ListalTest("e:\\test1.xml");
+			//#*# move this to a button and allow the user to select the file location -aLzyEE
+			bool asdfx= Sites.Listal.ListalTest("C:\\Users\\it\\Documents\\Listal Test\\Test.xml");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
